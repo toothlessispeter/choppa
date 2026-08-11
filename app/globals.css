@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-bg text-fg antialiased;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  a {
+    @apply text-accent;
+  }
+  a:hover {
+    @apply text-accent-hover;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+  ::selection {
+    background: #8b5cf6;
+    color: #ffffff;
+  }
+  ::placeholder {
+    color: #63636c;
+  }
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Range slider (BPM ceiling filter) */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 2px;
+    background: #2c2c32;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -6px;
+    background: #8b5cf6;
+    border: 0;
+    border-radius: 50%;
+    cursor: grab;
+  }
+  input[type="range"]::-moz-range-track {
+    height: 3px;
+    border-radius: 2px;
+    background: #2c2c32;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #8b5cf6;
+    border: 0;
+    border-radius: 50%;
+    cursor: grab;
+  }
+}
+
+@layer components {
+  /* Small uppercase mono eyebrow label, used everywhere in the shell */
+  .label-eyebrow {
+    @apply font-mono text-[10px] tracking-[0.18em] text-mut;
+  }
+}
